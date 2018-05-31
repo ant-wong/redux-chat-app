@@ -14,6 +14,7 @@ import username from './utils/name'
 const sagaMiddleware = createSagaMiddleware()
 const store = createStore(reducers, applyMiddleware(sagaMiddleware))
 
+console.log(store)
 const socket = setUpSocket(store.dispatch, username)
 
 sagaMiddleware.run(handleNewMessage, {socket, username})
